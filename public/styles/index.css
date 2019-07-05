@@ -1,0 +1,29 @@
+.container {
+  height: 700px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .button-container {
+  text-align: center;
+}
+
+.tracks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tracks .track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracks .track img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 50%;
+}
