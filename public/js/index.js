@@ -59,3 +59,28 @@ const getTracks = () => {
     }
   });
 };
+
+const search = () => {
+  let searchText = document.getElementsByTagName("input")[0].value;
+  let root = document.getElementsByClassName("container")[0];
+  highlightMatchingTextNodes(root, searchText);
+};
+
+const highlightMatchingTextNodes = (node, searchText) => {
+  if (node.nodeName === "#text") {
+    let parent = node.parentElement;
+    parent.classList.remove("highlight");
+
+    if (node.nodeValue.toLowerCase().includes(searchText.toLowerCase())) {
+      parent.classList.add("highlight");
+    }
+  }
+
+  let children = node.childNodes;
+
+  for (let i = 0; i < children.length; i++) {
+    highlightMatchingTextNodes(children[i], searchText);
+  }
+
+  return;
+};
